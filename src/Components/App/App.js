@@ -32,32 +32,28 @@ class App extends React.Component {
     playlistName: "New Playlist",
     playlistTracks: [
       {
-        name: 'Doctor',
-        artist: 'Truslow',
-        album: 'Hurricane',
-        id: 1
+        name: "All the King's Horses",
+        artist: 'Karmina',
+        album: "All the King's Horses",
+        id: 4
         },
         {
-          name: 'Icarus',
-          artist: 'Bastille',
-          album: 'All This Bad Blood',
-          id: 2
-          },
-          {
-            name: 'Demons at the Door',
-            artist: 'Sleeping Wolf',
-            album: 'The Dark',
-            id: 3
-            }
+          name: "The London Air Raids",
+          artist: 'Vian Izak',
+          album: "Northern Anthems",
+          id: 5
+          }
     ]};
     this.addTrack = this.addTrack.bind(this);
   }
 
   addTrack(track) {
-    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+    let tracks = this.state.playlistTracks;
+    if (tracks.find(savedTrack => savedTrack.id === track.id)) {
       return;
     }
-    this.state.playlistTracks.push(track);
+    tracks.push(track);
+    this.setState({playlistTracks: tracks});
   }
 
   render() {

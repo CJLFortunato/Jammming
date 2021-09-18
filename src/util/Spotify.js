@@ -2,7 +2,7 @@ import config from './config.js';
 
 let accessToken;
 const clientId = config.clientId;
-const redirectUri = 'http://react-jammming.surge.sh';
+const redirectUri = 'http://localhost:3000/';
 
 const Spotify = {
 
@@ -44,7 +44,8 @@ const Spotify = {
                 name: track.name,
                 artist: track.artists[0].name,
                 album: track.album.name,
-                uri: track.uri
+                uri: track.uri,
+                preview: track['preview_url']
             }));
         });
     },

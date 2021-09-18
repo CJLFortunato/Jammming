@@ -2,7 +2,7 @@ import config from './config.js';
 
 let accessToken;
 const clientId = config.clientId;
-const redirectUri = 'http://localhost:3000/';
+const redirectUri = 'http://react-jammming.surge.sh';
 
 const Spotify = {
 

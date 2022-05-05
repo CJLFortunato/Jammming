@@ -30,11 +30,9 @@ export function App() {
 
   const savePlaylist = () => {
     const trackUris = playlistTracks.map(track => track.uri);
-    Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
-      this.setState({
-        playlistName: 'New Playlist',
-        playlistTracks: []
-      });
+    Spotify.savePlaylist(playlistName, trackUris).then(() => {
+    setPlaylistName('New Playlist');
+    setPlaylistTracks([]);
     });
   };
 
